@@ -26,5 +26,5 @@
 
 <ul>
     <li>Protótipo => https://www.figma.com/proto/L335lZP9GRGvjSrGeXSfbP/Untitled?node-id=124%3A1288&scaling=min-zoom&page-id=38%3A2225&starting-point-node-id=124%3A1288</li>
-    <li>Design => https://www.figma.com/file/L335lZP9GRGvjSrGeXSfbP/Untitled?node-id=38%3A2225</li>
+    <li>Design => <a href="https://www.figma.com/file/L335lZP9GRGvjSrGeXSfbP/Untitled?node-id=38%3A2225">https://www.figma.com/file/L335lZP9GRGvjSrGeXSfbP/Untitled?node-id=38%3A2225</a></li>
 </ul>

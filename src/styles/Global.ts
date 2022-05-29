@@ -55,6 +55,9 @@ export default createGlobalStyle`
 
     body, input, button {
         font-family: 'Montserrat', sans-serif;
+    }
+
+    body, input {
         font-weight: 400;
     }
     
@@ -63,7 +66,8 @@ export default createGlobalStyle`
     }
 
     a {
-        color: inherit;
+        color: #30B283;
+        font-weight: 700;
         text-decoration: none;
     }
 

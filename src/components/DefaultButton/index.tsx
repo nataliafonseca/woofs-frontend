@@ -5,7 +5,7 @@ interface DefaultButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
     action?: () => void;
     selectable?: boolean;
     children: ReactNode;
-}
+};
 
 export function DefaultButton({ action, selectable, children, ...rest }: DefaultButtonProps) {
     const [isSelected, setSelected] = useState(false);
@@ -23,4 +23,4 @@ export function DefaultButton({ action, selectable, children, ...rest }: Default
             {children}
         </Container>
     )
-}
+};

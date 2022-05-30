@@ -26,7 +26,7 @@ export function Carousel() {
                 {Object.entries(CarouselContent).map(([key, datas]) => (
                     <SwiperSlide key={key}>
                         <SlideWrapper>
-                            <ImageSlide src={datas.img}/>
+                            <ImageSlide src={datas.img} alt={datas.title}/>
                             <GreenTitle>{datas.title}</GreenTitle>
                         </SlideWrapper>
                     </SwiperSlide>

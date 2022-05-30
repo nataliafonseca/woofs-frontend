@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 interface ContainerProps {
     isSelected: boolean;
-}
+};
 
 export const Container = styled.div<ContainerProps>`
     font-size: 14px;
@@ -26,4 +26,4 @@ export const Container = styled.div<ContainerProps>`
         display: inline-block;
     }
 
-`
+`;

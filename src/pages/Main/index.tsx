@@ -28,4 +28,4 @@ export function Main() {
             <Login>Já tem uma conta? <Link to='/createprofile'>Entrar</Link></Login>
         </Container>
     )
-}
+};

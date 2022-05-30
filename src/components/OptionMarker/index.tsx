@@ -6,14 +6,14 @@ import { Container } from './styles';
 interface OptionMarkerProps {
     selected?: boolean;
     children: ReactNode;
-}
+};
 
 export function OptionMarker({ selected, children }: OptionMarkerProps) {
     const [isSelected, setIsSelected] = useState(selected || false);
 
     const handleOptionClick = () => {
         setIsSelected(!isSelected);
-    }
+    };
 
     return (
         <Container isSelected={isSelected}>
@@ -26,4 +26,4 @@ export function OptionMarker({ selected, children }: OptionMarkerProps) {
             <p>{children}</p>
         </Container>
     )
-}
+};

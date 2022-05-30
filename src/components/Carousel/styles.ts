@@ -1,7 +1,7 @@
 import styled from 'styled-components'
 
 export const Container = styled.div`
-    width: 90%;
+    width: 95%;
     margin: 2.5rem 0;
 
     .swiper {
@@ -14,8 +14,8 @@ export const Container = styled.div`
     }
 
     .swiper-pagination-bullet {
-        height: 0.4rem;
-        width: 0.4rem;
+        height: 4px;
+        width: 4px;
     }
 
     .swiper-pagination-bullet-active {

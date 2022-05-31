@@ -23,9 +23,13 @@ export function Main() {
                 Com o <Strong>woofs</Strong> é super facil encontrar um par perfeito para o seu bichinho
             </Description>
 
-            <DefaultButton  selectable>Criar conta</DefaultButton>
+            <Link to="/createprofile">
+                <DefaultButton>
+                    Criar conta
+                </DefaultButton>
+            </Link>
 
-            <Login>Já tem uma conta? <Link to='/createprofile'>Entrar</Link></Login>
+            <Login>Já tem uma conta? <Link to='/login'>Entrar</Link></Login>
         </Container>
     )
 };

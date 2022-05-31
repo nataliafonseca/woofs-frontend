@@ -5,12 +5,22 @@ export const Container = styled.div`
 
     display: flex;
     align-items: center;
-    justify-content: center;
+    justify-content: space-between;
     flex-direction: column;
+
+    overflow: auto;
+
+    @media (min-height: 800px) {
+        justify-content: center;
+    }
 `
 
 export const Logo = styled.img`
     margin-top: 2.25rem;
+
+    @media (max-width: 450px) {
+        height: 5rem;
+    }
 `
 
 export const Login = styled.span`

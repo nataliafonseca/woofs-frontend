@@ -1,9 +1,8 @@
 import styled from 'styled-components';
 
 export const Container = styled.div`
-    display: inline-block;
-    margin-right: 60px;
-    margin-bottom: 20px;
+    position: absolute;
+    left: 0;
 
     div {
         width: 38px;

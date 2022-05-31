@@ -36,4 +36,8 @@ export const SlideWrapper = styled.div`
 
 export const ImageSlide = styled.img`
     height: 20.75rem;
+
+    @media (max-width: 450px) {
+        height: 13rem
+    }
 `

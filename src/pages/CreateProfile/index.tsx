@@ -7,7 +7,13 @@ import { OptionMarker } from '../../components/OptionMarker';
 import { Input } from '../../components/Input';
 import { Header } from '../../components/Header';
 
-import { Container, SectionTitle, TermsWrapper } from './styles';
+import { 
+    Container, 
+    SectionTitle, 
+    InputsWrapper,  
+    TermsWrapper,
+    ButtonWrapper 
+} from './styles';
 
 export function CreateProfile() {
     return (
@@ -20,8 +26,26 @@ export function CreateProfile() {
                 <GreenTitle>Criar conta</GreenTitle>
             </Header>
 
-            <SectionTitle>Informações pessoais</SectionTitle>
-            <Input />
+            <InputsWrapper>
+                <SectionTitle>Informações pessoais</SectionTitle>
+                <Input 
+                    label="Nome"
+                />
+                <Input 
+                    label="E-mail"
+                />
+                <Input 
+                    label="CPF"
+                />
+                <Input 
+                    label="Senha"
+                    type="password"
+                />
+                 <Input 
+                    label="Repita a senha"
+                    type="password"
+                />
+            </InputsWrapper>
 
             <TermsWrapper>
                 <SectionTitle>Termos e informações</SectionTitle>
@@ -29,7 +53,11 @@ export function CreateProfile() {
                 <OptionMarker>Aceitar <Link to='/createprofile'>termos de uso</Link></OptionMarker>
             </TermsWrapper>
 
-            <DefaultButton>Avançar</DefaultButton>
+            <ButtonWrapper>
+                <DefaultButton>
+                    Avançar
+                </DefaultButton>
+            </ButtonWrapper>
 
         </Container>
     )

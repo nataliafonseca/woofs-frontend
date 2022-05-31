@@ -8,8 +8,16 @@ export const InputWrapper = styled.div<{isFocused: boolean}>`
     position: relative;
     transition: all 0.2s ease-in-out;
 
+    display: flex;
+    align-items: center;
+
+    svg {
+        font-size: 1.2rem;
+        color: var(--gray50);
+    }
+
     ${({ isFocused }) => isFocused && css`
-        border: 2px solid var(--green100);
+        border: 1px solid var(--green100);
     `}
 `
 
@@ -17,7 +25,6 @@ export const InputStyled = styled.input`
     height: 100%;
     width: 100%;
     border: none;
-    z-index: 999;
 `
 
 export const Label = styled.span<{isEmpty: boolean}>`

@@ -1,41 +1,41 @@
-import styled from 'styled-components'
+import styled from 'styled-components';
 
 export const Container = styled.div`
-    height: 100vh;
+  height: 100vh;
 
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    flex-direction: column;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  flex-direction: column;
 
-    overflow: auto;
+  overflow: auto;
 
-    @media (min-height: 800px) {
-        justify-content: center;
-    }
-`
+  @media (min-height: 800px) {
+    justify-content: center;
+  }
+`;
 
 export const Logo = styled.img`
-    margin-top: 2.25rem;
+  margin-top: 2.25rem;
 
-    @media (max-width: 450px) {
-        height: 5rem;
-    }
-`
+  @media (max-width: 450px) {
+    height: 5rem;
+  }
+`;
 
 export const Login = styled.span`
-    margin-top: 16px;
-    margin-bottom: 35px;
+  margin-top: 16px;
+  margin-bottom: 35px;
 
-    font-size: 14px;
-    text-align: center;
+  font-size: 14px;
+  text-align: center;
 `;
 
 export const Description = styled.p`
-    max-width: 18.75rem;
-    margin-bottom: 2.5rem;
-    color: var(--gray50);
-    font-size: 1rem;
-`
+  max-width: 18.75rem;
+  margin-bottom: 2.5rem;
+  color: var(--gray50);
+  font-size: 1rem;
+`;
 
-export const Strong = styled.strong``
+export const Strong = styled.strong``;

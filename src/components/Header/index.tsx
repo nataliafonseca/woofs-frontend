@@ -1,14 +1,11 @@
-import { ReactNode } from "react";
-import { HeaderWrapper } from "./styles";
+import { ReactNode } from 'react';
+
+import { HeaderWrapper } from './styles';
 
 interface Props {
-    children: ReactNode;
+  children: ReactNode;
 }
 
 export function Header({ children }: Props) {
-    return (
-        <HeaderWrapper>
-            {children}
-        </HeaderWrapper>
-    )
+  return <HeaderWrapper>{children}</HeaderWrapper>;
 }

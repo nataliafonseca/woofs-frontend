@@ -1,57 +1,47 @@
-import { FaAngleLeft, FaUserAlt } from "react-icons/fa";
-import { GoBackButton } from "../../components/GoBackButton";
-import { GreenTitle } from "../../components/GreenTitle";
-import { Header } from "../../components/Header";
-import loginImage from '../../assets/loginImage.png'
-import { Input } from "../../components/Input";
-import { DefaultButton } from "../../components/DefaultButton";
+import { FaAngleLeft, FaUserAlt } from 'react-icons/fa';
+import { Link } from 'react-router-dom';
 
-import { 
-    Container, 
-    ImageStyled, 
-    SectionTitle, 
-    ImageWrapper, 
-    LoginWrapper,
-    LinkWrapper 
-} from "./styles";
-import { Link } from "react-router-dom";
+import loginImage from '../../assets/loginImage.png';
+import { DefaultButton } from '../../components/DefaultButton';
+import { GoBackButton } from '../../components/GoBackButton';
+import { GreenTitle } from '../../components/GreenTitle';
+import { Header } from '../../components/Header';
+import { Input } from '../../components/Input';
+import {
+  Container,
+  ImageStyled,
+  ImageWrapper,
+  LinkWrapper,
+  LoginWrapper,
+  SectionTitle,
+} from './styles';
 
 export function Login() {
-    return (
-        <Container>
-            <Header>
-                <GoBackButton link='/'>
-                    <FaAngleLeft size={17} />
-                </GoBackButton>
+  return (
+    <Container>
+      <Header>
+        <GoBackButton link="/">
+          <FaAngleLeft size={17} />
+        </GoBackButton>
 
-                <GreenTitle>Login</GreenTitle>
-            </Header>
+        <GreenTitle>Login</GreenTitle>
+      </Header>
 
-            <SectionTitle>Entre com seu login e senha</SectionTitle>
+      <SectionTitle>Entre com seu login e senha</SectionTitle>
 
-            <ImageWrapper>
-                <ImageStyled 
-                    src={loginImage}
-                />
-            </ImageWrapper>
+      <ImageWrapper>
+        <ImageStyled src={loginImage} />
+      </ImageWrapper>
 
-            <LoginWrapper>
-                <Input 
-                    label="Login"
-                    icon={<FaUserAlt />}
-                />
-                <Input 
-                    label="Senha"
-                    type="password"
-                />
-                <DefaultButton>
-                    Login
-                </DefaultButton>
-            </LoginWrapper>
+      <LoginWrapper>
+        <Input label="Login" icon={<FaUserAlt />} />
+        <Input label="Senha" type="password" />
+        <DefaultButton>Login</DefaultButton>
+      </LoginWrapper>
 
-            <LinkWrapper>
-                <Link to="/recover">Recuperar meu acesso</Link>
-            </LinkWrapper>
-        </Container>
-    )
+      <LinkWrapper>
+        <Link to="/recover">Recuperar meu acesso</Link>
+      </LinkWrapper>
+    </Container>
+  );
 }

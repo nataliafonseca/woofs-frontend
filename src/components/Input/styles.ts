@@ -2,7 +2,7 @@ import styled, { css } from 'styled-components';
 
 export const InputWrapper = styled.div<{ isFocused: boolean }>`
   width: 100%;
-  border: 1px solid var(--gray30);
+  border: 1px solid ${({ theme }) => theme.gray300};
   border-radius: 23px;
   padding: 0.9rem 2rem;
   position: relative;
@@ -13,13 +13,13 @@ export const InputWrapper = styled.div<{ isFocused: boolean }>`
 
   svg {
     font-size: 1.2rem;
-    color: var(--gray50);
+    color: ${({ theme }) => theme.gray500};
   }
 
   ${({ isFocused }) =>
     isFocused &&
     css`
-      border: 1px solid var(--green100);
+      border: 1px solid ${({ theme }) => theme.green500};
     `}
 `;
 
@@ -33,9 +33,9 @@ export const Label = styled.span<{ isEmpty: boolean }>`
   position: absolute;
   top: 50%;
   transform: translateY(-50%);
-  color: var(--gray50);
+  color: ${({ theme }) => theme.gray500};
   padding: 0 4px;
-  background: var(--white);
+  background: ${({ theme }) => theme.white};
   font-size: 14px;
   transition: all 0.2s ease-in-out;
 

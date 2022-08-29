@@ -8,7 +8,7 @@ export const SectionTitle = styled.h2`
   font-weight: 400;
   font-size: 20px;
   line-height: 120%;
-  color: #2b2b2b;
+  color: ${({ theme }) => theme.gray800};
 
   margin-bottom: 14px;
   text-align: left;

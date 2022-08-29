@@ -34,7 +34,7 @@ export const Login = styled.span`
 export const Description = styled.p`
   max-width: 18.75rem;
   margin-bottom: 2.5rem;
-  color: var(--gray50);
+  color: ${({ theme }) => theme.gray500};
   font-size: 1rem;
 `;
 

@@ -19,7 +19,7 @@ export const Container = styled.div`
   }
 
   .swiper-pagination-bullet-active {
-    background: var(--green100);
+    background: ${({ theme }) => theme.green500};
   }
 `;
 

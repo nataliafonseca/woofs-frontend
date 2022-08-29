@@ -16,7 +16,7 @@ export const SectionTitle = styled.h2`
   font-weight: 400;
   font-size: 28px;
   line-height: 120%;
-  color: #2b2b2b;
+  color: ${({ theme }) => theme.gray800};
 
   margin-bottom: 14px;
   text-align: center;
@@ -46,7 +46,7 @@ export const LinkWrapper = styled.div`
   text-decoration: underline;
 
   a {
-    color: var(--gray50);
+    color: ${({ theme }) => theme.gray500};
     font-size: 0.87rem;
     font-weight: 400;
   }

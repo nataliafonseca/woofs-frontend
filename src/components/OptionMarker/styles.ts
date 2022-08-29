@@ -6,7 +6,7 @@ interface ContainerProps {
 
 export const Container = styled.div<ContainerProps>`
   font-size: 14px;
-  color: #2b2b2b;
+  color: ${({ theme }) => theme.gray800};
 
   display: flex;
   align-items: center;
@@ -14,12 +14,12 @@ export const Container = styled.div<ContainerProps>`
   margin-bottom: 11px;
 
   svg {
-    color: #2b2b2b;
+    color: ${({ theme }) => theme.gray800};
 
     ${(props) =>
       props.isSelected &&
       css`
-        color: #30b283;
+        color: ${({ theme }) => theme.green500};
       `}
   }
 

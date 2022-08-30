@@ -1,9 +1,9 @@
-import { Link } from 'react-router-dom';
+import { Link } from "react-router-dom";
 
-import logo from '../../assets/logo.png';
-import { Carousel } from '../../components/Carousel';
-import { DefaultButton } from '../../components/DefaultButton';
-import { Container, Description, Login, Logo, Strong } from './styles';
+import logo from "../../assets/logo.png";
+import { Carousel } from "../../components/Carousel";
+import { DefaultButton } from "../../components/DefaultButton";
+import { Container, Description, Login, Logo, Strong } from "./styles";
 
 export function Main() {
   return (

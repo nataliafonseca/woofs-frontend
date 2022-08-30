@@ -1,7 +1,7 @@
-import { ReactNode, useState } from 'react';
-import { FaCheckSquare, FaRegSquare } from 'react-icons/fa';
+import { ReactNode, useState } from "react";
+import { FaCheckSquare, FaRegSquare } from "react-icons/fa";
 
-import { Container } from './styles';
+import { Container } from "./styles";
 
 interface OptionMarkerProps {
   selected?: boolean;

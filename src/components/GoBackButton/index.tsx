@@ -1,7 +1,7 @@
-import { ReactNode } from 'react';
-import { Link } from 'react-router-dom';
+import { ReactNode } from "react";
+import { Link } from "react-router-dom";
 
-import { Container } from './styles';
+import { Container } from "./styles";
 
 interface GoBackButtonProps {
   link: string;

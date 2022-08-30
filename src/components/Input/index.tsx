@@ -1,7 +1,7 @@
-import { InputHTMLAttributes, ReactNode, useRef, useState } from 'react';
-import { FaEye, FaEyeSlash } from 'react-icons/fa';
+import { InputHTMLAttributes, ReactNode, useRef, useState } from "react";
+import { FaEye, FaEyeSlash } from "react-icons/fa";
 
-import { InputStyled, InputWrapper, Label } from './styles';
+import { InputStyled, InputWrapper, Label } from "./styles";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label: string;
@@ -15,7 +15,7 @@ export function Input({ label, type, icon, ...rest }: InputProps) {
   const [passwordInputType, setPasswordInputType] = useState(type);
 
   const inputRef = useRef<HTMLInputElement>(null);
-  const isPasswordInput = type === 'password';
+  const isPasswordInput = type === "password";
 
   const handleFocusInput = () => {
     setIsEmpty(true);
@@ -36,11 +36,11 @@ export function Input({ label, type, icon, ...rest }: InputProps) {
   };
 
   const showPassword = () => {
-    setPasswordInputType('text');
+    setPasswordInputType("text");
   };
 
   const hidePassword = () => {
-    setPasswordInputType('password');
+    setPasswordInputType("password");
   };
 
   return (
@@ -57,7 +57,7 @@ export function Input({ label, type, icon, ...rest }: InputProps) {
       />
 
       {isPasswordInput &&
-        (passwordInputType === 'password' ? (
+        (passwordInputType === "password" ? (
           <FaEyeSlash onClick={showPassword} />
         ) : (
           <FaEye onClick={hidePassword} />

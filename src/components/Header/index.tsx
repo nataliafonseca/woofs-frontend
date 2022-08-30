@@ -1,6 +1,6 @@
-import { ReactNode } from 'react';
+import { ReactNode } from "react";
 
-import { HeaderWrapper } from './styles';
+import { HeaderWrapper } from "./styles";
 
 interface Props {
   children: ReactNode;

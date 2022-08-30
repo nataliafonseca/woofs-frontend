@@ -1,6 +1,6 @@
-import { ButtonHTMLAttributes, ReactNode, useState } from 'react';
+import { ButtonHTMLAttributes, ReactNode, useState } from "react";
 
-import { Container } from './styles';
+import { Container } from "./styles";
 
 interface DefaultButtonProps extends ButtonHTMLAttributes<HTMLButtonElement> {
   action?: () => void;

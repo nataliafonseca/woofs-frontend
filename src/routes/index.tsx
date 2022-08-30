@@ -1,10 +1,9 @@
-import { Route, Routes as Switch } from 'react-router-dom';
+import { Route, Routes as Switch } from "react-router-dom";
 
-import { CreateProfile } from '../pages/CreateProfile';
-import { Login } from '../pages/Login';
-import { Main } from '../pages/Main';
+import { CreateProfile } from "../pages/CreateProfile";
+import { Login } from "../pages/Login";
+import { Main } from "../pages/Main";
 // import { PrivateRoute } from './PrivateRoute'
-
 
 const Routes = () => (
   <Switch>

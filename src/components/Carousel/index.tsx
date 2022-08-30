@@ -1,12 +1,12 @@
-import 'swiper/css';
-import 'swiper/css/pagination';
+import "swiper/css";
+import "swiper/css/pagination";
 
-import { Autoplay, Pagination } from 'swiper';
-import { Swiper, SwiperSlide } from 'swiper/react';
+import { Autoplay, Pagination } from "swiper";
+import { Swiper, SwiperSlide } from "swiper/react";
 
-import { GreenTitle } from '../GreenTitle';
-import { CarouselContent } from './CarouselContent';
-import { Container, ImageSlide, SlideWrapper } from './styles';
+import { GreenTitle } from "../GreenTitle";
+import { CarouselContent } from "./CarouselContent";
+import { Container, ImageSlide, SlideWrapper } from "./styles";
 
 export function Carousel() {
   return (

@@ -1,12 +1,12 @@
-import { FaAngleLeft, FaUserAlt } from 'react-icons/fa';
-import { Link } from 'react-router-dom';
+import { FaAngleLeft, FaUserAlt } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
-import loginImage from '../../assets/loginImage.png';
-import { DefaultButton } from '../../components/DefaultButton';
-import { GoBackButton } from '../../components/GoBackButton';
-import { GreenTitle } from '../../components/GreenTitle';
-import { Header } from '../../components/Header';
-import { Input } from '../../components/Input';
+import loginImage from "../../assets/loginImage.png";
+import { DefaultButton } from "../../components/DefaultButton";
+import { GoBackButton } from "../../components/GoBackButton";
+import { GreenTitle } from "../../components/GreenTitle";
+import { Header } from "../../components/Header";
+import { Input } from "../../components/Input";
 import {
   Container,
   ImageStyled,
@@ -14,7 +14,7 @@ import {
   LinkWrapper,
   LoginWrapper,
   SectionTitle,
-} from './styles';
+} from "./styles";
 
 export function Login() {
   return (

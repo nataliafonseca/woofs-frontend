@@ -3,9 +3,9 @@ import "swiper/css/pagination";
 
 import { Autoplay, Pagination } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
-
 import { GreenTitle } from "../GreenTitle";
 import { CarouselContent } from "./CarouselContent";
+
 import { Container, ImageSlide, SlideWrapper } from "./styles";
 
 export function Carousel() {

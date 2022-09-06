@@ -16,7 +16,7 @@ export function Main() {
         Com o <Strong>woofs</Strong> é super facil encontrar um par perfeito para o seu bichinho
       </Description>
 
-      <Link to="/createprofile">
+      <Link to="/registeraccount">
         <DefaultButton>Criar conta</DefaultButton>
       </Link>
 

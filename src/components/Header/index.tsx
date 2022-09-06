@@ -1,11 +1,18 @@
-import { ReactNode } from "react";
+import { GoBackButton } from "../GoBackButton";
+import { GreenTitle } from "../GreenTitle";
 
 import { HeaderWrapper } from "./styles";
 
-interface Props {
-  children: ReactNode;
+interface HeaderProps {
+  linkTo: string;
+  title: string;
 }
 
-export function Header({ children }: Props) {
-  return <HeaderWrapper>{children}</HeaderWrapper>;
+export function Header({ linkTo, title }: HeaderProps) {
+  return (
+    <HeaderWrapper>
+      <GoBackButton link={linkTo} />
+      <GreenTitle>{title}</GreenTitle>
+    </HeaderWrapper>
+  );
 }

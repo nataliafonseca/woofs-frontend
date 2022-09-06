@@ -1,24 +1,16 @@
-import { FaAngleLeft } from "react-icons/fa";
 import { Link } from "react-router-dom";
 
 import { DefaultButton } from "../../components/DefaultButton";
-import { GoBackButton } from "../../components/GoBackButton";
-import { GreenTitle } from "../../components/GreenTitle";
 import { Header } from "../../components/Header";
 import { Input } from "../../components/Input";
 import { OptionMarker } from "../../components/OptionMarker";
+
 import { ButtonWrapper, Container, InputsWrapper, SectionTitle, TermsWrapper } from "./styles";
 
-export function CreateProfile() {
+export function RegisterAccount() {
   return (
     <Container>
-      <Header>
-        <GoBackButton link="/">
-          <FaAngleLeft size={17} />
-        </GoBackButton>
-
-        <GreenTitle>Criar conta</GreenTitle>
-      </Header>
+      <Header linkTo="/" title="Criar Conta" />
 
       <InputsWrapper>
         <SectionTitle>Informações pessoais</SectionTitle>

@@ -12,5 +12,5 @@ export const defaultTheme = {
   red500: "#FF4930",
   blue500: "#1DBCEE",
 
-  boxShadow: "0px 4px 4px 0 rgba(0, 0, 0, 0.25)",
+  boxShadow: "rgba(0, 0, 0, 0.3)",
 } as const;

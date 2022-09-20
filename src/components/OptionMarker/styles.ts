@@ -27,4 +27,9 @@ export const Container = styled.div<ContainerProps>`
     margin-left: 8px;
     display: inline-block;
   }
+
+  span {
+    text-decoration: underline;
+    color: ${(props) => props.theme.green500};
+  }
 `;

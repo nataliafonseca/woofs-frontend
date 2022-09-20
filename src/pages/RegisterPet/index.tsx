@@ -1,11 +1,29 @@
+import { useState } from "react";
 import { Header } from "../../components/Header";
 import { Input } from "../../components/Input";
 import { InputTextArea } from "../../components/InputTextArea";
 import { RadioButton } from "../../components/RadioButton";
+import thumb from "../../assets/thumb.svg";
 
-import { Gender, RegisterPetContainer, SubTitle, InputsWrapper } from "./styles";
+import {
+  Gender,
+  RegisterPetContainer,
+  SubTitle,
+  InputsWrapper,
+  Interests,
+  ToggleItem,
+  InterestsLine,
+  Distance,
+  StyledTrack,
+  StyledRange,
+  StyledThumb,
+  DistanceWrapper,
+  DistanceNumber,
+} from "./styles";
 
 export function RegisterPet() {
+  const [distanceNumber, setDistanceNumber] = useState(10);
+
   return (
     <RegisterPetContainer>
       <Header linkTo="/registeraccount" title="Cadastrar Pet" />
@@ -26,6 +44,37 @@ export function RegisterPet() {
         </InputsWrapper>
 
         <SubTitle>Interesses</SubTitle>
+        <Interests type="multiple">
+          <InterestsLine>
+            <ToggleItem value="Raça">Raça</ToggleItem>
+            <ToggleItem value="Vacinado">Vacinado</ToggleItem>
+            <ToggleItem value="Idade">Idade</ToggleItem>
+          </InterestsLine>
+          <InterestsLine>
+            <ToggleItem value="Proximidade">Proximidade</ToggleItem>
+            <ToggleItem value="Gênero">Gênero</ToggleItem>
+          </InterestsLine>
+        </Interests>
+
+        <SubTitle>Proximidade</SubTitle>
+        <DistanceWrapper>
+          <Distance
+            onValueChange={(value) => {
+              setDistanceNumber(value[0]);
+            }}
+            defaultValue={[10]}
+            max={200}
+            step={1}
+          >
+            <StyledTrack>
+              <StyledRange />
+            </StyledTrack>
+            <StyledThumb>
+              <img src={thumb} alt="" />
+            </StyledThumb>
+          </Distance>
+          <DistanceNumber>{distanceNumber} km</DistanceNumber>
+        </DistanceWrapper>
       </form>
     </RegisterPetContainer>
   );

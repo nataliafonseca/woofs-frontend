@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-
 import { DefaultButton } from "../../components/DefaultButton";
 import { Header } from "../../components/Header";
 import { Input } from "../../components/Input";
@@ -25,13 +24,15 @@ export function RegisterAccount() {
         <SectionTitle>Termos e informações</SectionTitle>
         <OptionMarker>Receber informações por e-mail</OptionMarker>
         <OptionMarker>
-          Aceitar <Link to="/createprofile">termos de uso</Link>
+          Aceitar <span>termos de uso</span>
         </OptionMarker>
       </TermsWrapper>
 
-      <ButtonWrapper>
-        <DefaultButton>Avançar</DefaultButton>
-      </ButtonWrapper>
+      <Link to="/registerpet">
+        <ButtonWrapper>
+          <DefaultButton>Avançar</DefaultButton>
+        </ButtonWrapper>
+      </Link>
     </Container>
   );
 }

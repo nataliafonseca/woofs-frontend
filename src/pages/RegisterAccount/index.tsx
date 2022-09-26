@@ -1,8 +1,8 @@
 import { Link } from "react-router-dom";
 import { DefaultButton } from "../../components/DefaultButton";
 import { Header } from "../../components/Header";
-import { Input } from "../../components/Input";
-import { OptionMarker } from "../../components/OptionMarker";
+import { Input } from "../../components/form/Input";
+import { OptionMarker } from "../../components/form/OptionMarker";
 
 import { ButtonWrapper, Container, InputsWrapper, SectionTitle, TermsWrapper } from "./styles";
 
@@ -15,6 +15,7 @@ export function RegisterAccount() {
         <SectionTitle>Informações pessoais</SectionTitle>
         <Input label="Nome" />
         <Input label="E-mail" />
+        <Input label="Telefone" />
         <Input label="CPF" />
         <Input label="Senha" type="password" />
         <Input label="Repita a senha" type="password" />

@@ -90,7 +90,8 @@ export const Distance = styled(Slider.Root)`
   user-select: none;
   touch-action: none;
   padding-top: 30px;
-  width: 100%;
+  width: calc(100% - 0.5rem);
+  margin: 0 auto 50px auto;
 
   &[data-orientation="horizontal"] {
     height: 20px;

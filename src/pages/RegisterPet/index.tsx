@@ -1,8 +1,8 @@
 import { useState } from "react";
 import { Header } from "../../components/Header";
-import { Input } from "../../components/Input";
-import { InputTextArea } from "../../components/InputTextArea";
-import { RadioButton } from "../../components/RadioButton";
+import { Input } from "../../components/form/Input";
+import { InputTextArea } from "../../components/form/InputTextArea";
+import { RadioButton } from "../../components/form/RadioButton";
 import thumb from "../../assets/thumb.svg";
 
 import {
@@ -63,7 +63,7 @@ export function RegisterPet() {
               setDistanceNumber(value[0]);
             }}
             defaultValue={[10]}
-            max={200}
+            max={110}
             step={1}
           >
             <StyledTrack>
@@ -73,8 +73,10 @@ export function RegisterPet() {
               <img src={thumb} alt="" />
             </StyledThumb>
           </Distance>
-          <DistanceNumber>{distanceNumber} km</DistanceNumber>
+          <DistanceNumber>Até {distanceNumber} km</DistanceNumber>
         </DistanceWrapper>
+
+        <SubTitle>Fotos</SubTitle>
       </form>
     </RegisterPetContainer>
   );

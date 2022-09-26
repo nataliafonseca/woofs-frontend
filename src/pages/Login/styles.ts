@@ -8,6 +8,10 @@ export const ImageWrapper = styled.div`
 
   display: flex;
   justify-content: center;
+
+  img {
+    height: 15rem;
+  }
 `;
 
 export const ImageStyled = styled.img``;

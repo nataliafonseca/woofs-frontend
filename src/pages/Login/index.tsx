@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 import loginImage from "../../assets/loginImage.png";
 import { DefaultButton } from "../../components/DefaultButton";
 import { Header } from "../../components/Header";
-import { Input } from "../../components/Input";
+import { Input } from "../../components/form/Input";
 
 import {
   Container,

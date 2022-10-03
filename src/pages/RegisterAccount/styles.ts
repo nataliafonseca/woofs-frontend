@@ -35,12 +35,14 @@ export const TermsWrapper = styled.div`
 
 export const ButtonWrapper = styled.div`
   position: absolute;
-  bottom: 1.8rem;
+  bottom: 0;
   left: 0;
   width: 100%;
 
   display: flex;
   justify-content: center;
+  background: ${(props) => props.theme.white};
+  padding: 1rem 0 1.8rem 0;
 
   button {
     width: calc(100% - 1.8rem);

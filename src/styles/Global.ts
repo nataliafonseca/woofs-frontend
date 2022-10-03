@@ -38,4 +38,8 @@ export const GlobalStyle = createGlobalStyle`
   a {
     color: ${({ theme }) => theme.green500};
   }
+
+  button {
+    cursor: pointer;
+  }
 `;

@@ -4,6 +4,7 @@ import { Main } from "../pages/Main";
 import { Login } from "../pages/Login";
 import { RegisterAccount } from "../pages/RegisterAccount";
 import { RegisterPet } from "../pages/RegisterPet";
+import { SearchMatch } from "../pages/SearchMatch";
 // import { PrivateRoute } from './PrivateRoute'
 
 export const Routes = () => (
@@ -12,6 +13,7 @@ export const Routes = () => (
     <Route path="/login" element={<Login />} />
     <Route path="/registeraccount" element={<RegisterAccount />} />
     <Route path="/registerpet" element={<RegisterPet />} />
+    <Route path="/searchmatch" element={<SearchMatch />} />
     <Route path="*" element={<p>404</p>} />
   </Switch>
 );

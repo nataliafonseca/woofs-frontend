@@ -1,37 +1,46 @@
+import { useRef, useState } from "react";
+import { FileInputContainer } from "./styles";
+
 export function FileInput() {
+  const inputRef = useRef<HTMLInputElement>(null);
+  const [img, setImg] = useState<string>("");
+
+  function convertImg(file: any) {
+    const reader = new FileReader();
+
+    reader.onload = function () {
+      setImg(reader.result as string);
+    };
+
+    reader.readAsDataURL(file);
+  }
+
+  function checkFileType(file: any) {
+    const ext = file.value.match(/\.(.+)$/)[1];
+
+    if (!inputRef.current) return;
+
+    switch (ext) {
+      case "jpg":
+      case "jpeg":
+      case "png":
+        convertImg(file.files[0]);
+        break;
+      default:
+        inputRef.current.value = "";
+    }
+  }
+
   return (
-    <div></div>
-    // <ImageUploader img={img}>
-    //   <div className="imageArea">
-    //     <span className="closeButton" onClick={clearImg}>
-    //       &#10006;
-    //     </span>
+    <FileInputContainer>
+      <input
+        type="file"
+        accept="image"
+        ref={inputRef}
+        onChange={(event) => checkFileType(event.target)}
+      />
 
-    //     {img === null ? (
-    //       <>
-    //         <FaCloudUploadAlt />
-    //         <p>Sem imagem</p>
-    //       </>
-    //     ) : (
-    //       <></>
-    //     )}
-
-    //     <div className="fileName">
-    //       <span>{imgName}</span>
-    //     </div>
-
-    //     <img src={img} alt="imageFile" />
-    //   </div>
-
-    //   <button onClick={handleChooseFile}>Upload</button>
-
-    //   <input
-    //     type="file"
-    //     accept="image"
-    //     ref={inputFileRef}
-    //     onChange={(event) => checkFileType(event.target)}
-    //     hidden
-    //   />
-    // </ImageUploader>
+      {img && <img src={img} height={50} />}
+    </FileInputContainer>
   );
 }

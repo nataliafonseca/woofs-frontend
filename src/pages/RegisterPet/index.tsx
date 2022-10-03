@@ -3,6 +3,7 @@ import { Header } from "../../components/Header";
 import { Input } from "../../components/form/Input";
 import { InputTextArea } from "../../components/form/InputTextArea";
 import { RadioButton } from "../../components/form/RadioButton";
+import { FileInput } from "../../components/form/FileInput";
 import thumb from "../../assets/thumb.svg";
 
 import {
@@ -77,6 +78,7 @@ export function RegisterPet() {
         </DistanceWrapper>
 
         <SubTitle>Fotos</SubTitle>
+        <FileInput />
       </form>
     </RegisterPetContainer>
   );

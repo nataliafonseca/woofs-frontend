@@ -127,3 +127,32 @@ export const StyledRange = styled(Slider.Range)`
 `;
 
 export const StyledThumb = styled(Slider.Thumb)``;
+
+export const InputFilesGrid = styled.div`
+  display: grid;
+  grid-template-columns: 125px 1fr;
+  gap: 14px;
+`;
+
+export const Column = styled.div`
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+`;
+
+export const ImagesRow = styled.div`
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 12px;
+  margin-top: 12px;
+`;
+
+export const ButtonWrapper = styled.div`
+  width: 100%;
+  margin-top: 20px;
+
+  button {
+    width: 100%;
+  }
+`;

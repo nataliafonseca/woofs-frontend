@@ -3,7 +3,8 @@ import { Header } from "../../components/Header";
 import { Input } from "../../components/form/Input";
 import { InputTextArea } from "../../components/form/InputTextArea";
 import { RadioButton } from "../../components/form/RadioButton";
-import { FileInput } from "../../components/form/FileInput";
+import { InputFile } from "../../components/form/InputFile";
+import { DefaultButton } from "../../components/DefaultButton";
 import thumb from "../../assets/thumb.svg";
 
 import {
@@ -20,6 +21,10 @@ import {
   StyledThumb,
   DistanceWrapper,
   DistanceNumber,
+  InputFilesGrid,
+  Column,
+  ImagesRow,
+  ButtonWrapper,
 } from "./styles";
 
 export function RegisterPet() {
@@ -78,7 +83,29 @@ export function RegisterPet() {
         </DistanceWrapper>
 
         <SubTitle>Fotos</SubTitle>
-        <FileInput />
+        <InputFilesGrid>
+          <Column>
+            <InputFile />
+            <InputFile />
+          </Column>
+
+          <InputFile heigth="auto" width="auto" />
+        </InputFilesGrid>
+
+        <ImagesRow>
+          <InputFile heigth="131px" width="100%" />
+          <InputFile heigth="131px" width="100%" />
+          <InputFile heigth="131px" width="100%" />
+        </ImagesRow>
+
+        <ImagesRow>
+          <InputFile heigth="204px" width="100%" />
+          <InputFile heigth="204px" width="100%" />
+        </ImagesRow>
+
+        <ButtonWrapper>
+          <DefaultButton type="submit">Criar perfil</DefaultButton>
+        </ButtonWrapper>
       </form>
     </RegisterPetContainer>
   );

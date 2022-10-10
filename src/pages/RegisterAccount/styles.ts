@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   margin: 20px;
-  margin-bottom: 52px;
 `;
 
 export const SectionTitle = styled.h2`
@@ -32,20 +31,14 @@ export const InputsWrapper = styled.div`
 
 export const TermsWrapper = styled.div`
   width: 100%;
+  margin-bottom: 50px;
 `;
 
 export const ButtonWrapper = styled.div`
-  position: absolute;
-  bottom: 0;
-  left: 0;
-  width: 100%;
-
   display: flex;
   justify-content: center;
-  background: ${(props) => props.theme.white};
-  padding-top: 1.8rem;
 
   button {
-    width: calc(100% - 1.8rem);
+    width: 100%;
   }
 `;

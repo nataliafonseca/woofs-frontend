@@ -89,7 +89,7 @@ export function RegisterPet() {
             <InputFile />
           </Column>
 
-          <InputFile heigth="auto" width="auto" />
+          <InputFile width="100%" heigth="204px" />
         </InputFilesGrid>
 
         <ImagesRow>

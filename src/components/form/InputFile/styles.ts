@@ -9,6 +9,7 @@ export const FileInputContainer = styled.div<{
   cursor: pointer;
   height: ${(props) => (props.heigth ? props.heigth : "96px")};
   width: ${(props) => (props.width ? props.width : "125px")};
+  overflow: hidden;
 
   display: flex;
   align-items: center;
@@ -58,8 +59,8 @@ export const TrashButton = styled.button`
 `;
 
 export const ImageSelected = styled.img`
-  max-width: 100%;
-  max-height: 100%;
+  width: 100%;
+  height: 100%;
   object-fit: cover;
   object-position: center;
 `;

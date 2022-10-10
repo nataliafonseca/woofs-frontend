@@ -2,6 +2,7 @@ import styled from "styled-components";
 
 export const Container = styled.div`
   margin: 20px;
+  margin-bottom: 52px;
 `;
 
 export const SectionTitle = styled.h2`
@@ -42,7 +43,7 @@ export const ButtonWrapper = styled.div`
   display: flex;
   justify-content: center;
   background: ${(props) => props.theme.white};
-  padding: 1rem 0 1.8rem 0;
+  padding-top: 1.8rem;
 
   button {
     width: calc(100% - 1.8rem);

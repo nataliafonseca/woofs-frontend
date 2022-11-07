@@ -2,9 +2,11 @@ import { FaUserAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import loginImage from "../../assets/loginImage.png";
 import { DefaultButton } from "../../components/DefaultButton";
-import { Header } from "../../components/Header";
 import { Input } from "../../components/form/Input";
+import { Header } from "../../components/Header";
 
+import { useContext } from "react";
+import { AuthContext } from "../../contexts/AuthContext";
 import {
   Container,
   ImageStyled,
@@ -15,6 +17,8 @@ import {
 } from "./styles";
 
 export function Login() {
+  const { signIn } = useContext(AuthContext);
+
   return (
     <Container>
       <Header linkTo="/" title="Login" />
@@ -26,9 +30,11 @@ export function Login() {
       </ImageWrapper>
 
       <LoginWrapper>
-        <Input label="Login" icon={<FaUserAlt />} />
+        <Input label="Email" icon={<FaUserAlt />} />
         <Input label="Senha" type="password" />
-        <DefaultButton>Login</DefaultButton>
+        <DefaultButton onClick={() => signIn({ email: "alisson@admin.com", password: "123456" })}>
+          Login
+        </DefaultButton>
       </LoginWrapper>
 
       <LinkWrapper>

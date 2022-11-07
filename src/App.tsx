@@ -6,6 +6,9 @@ import { Routes } from "./routes";
 import { GlobalStyle } from "./styles/Global";
 import { defaultTheme } from "./styles/themes/default";
 
+import { ToastContainer } from "react-toastify";
+import "react-toastify/dist/ReactToastify.min.css";
+
 export function App() {
   return (
     <ThemeProvider theme={defaultTheme}>
@@ -15,6 +18,7 @@ export function App() {
         </AuthProvider>
       </BrowserRouter>
       <GlobalStyle />
+      <ToastContainer />
     </ThemeProvider>
   );
 }

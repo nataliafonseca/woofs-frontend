@@ -28,7 +28,7 @@ export const SectionTitle = styled.h2`
   margin: 1.3rem 0;
 `;
 
-export const LoginWrapper = styled.div`
+export const LoginWrapper = styled.form`
   display: flex;
   align-items: center;
   justify-content: center;

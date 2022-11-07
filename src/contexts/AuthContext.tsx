@@ -1,5 +1,6 @@
 import { ReactNode, createContext, useMemo, useState } from "react";
 import { useNavigate } from "react-router-dom";
+import { toast } from "react-toastify";
 
 import { loginPost } from "../services/authService";
 
@@ -32,9 +33,9 @@ function AuthProvider({ children }: AuthProviderProps) {
       localStorage.setItem("woofs.token", token);
       setIsAuthenticated(true);
 
-      navigate("/");
+      navigate("/registerpet");
     } catch (error) {
-      console.log(error);
+      toast.error("E-mail e/ou senha incorretos");
     }
   }
 

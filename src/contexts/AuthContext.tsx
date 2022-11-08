@@ -33,7 +33,7 @@ function AuthProvider({ children }: AuthProviderProps) {
       localStorage.setItem("woofs.token", token);
       setIsAuthenticated(true);
 
-      navigate("/registerpet");
+      navigate("/searchmatch");
     } catch (error) {
       toast.error("E-mail e/ou senha incorretos");
     }

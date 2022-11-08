@@ -1,15 +1,31 @@
 import axios from "axios";
 
-export const api = axios.create({
-  baseURL: import.meta.env.VITE_API_URL,
-});
+const baseURL = import.meta.env.VITE_API_URL;
 
-api.interceptors.request.use(async (config) => {
-  const token = localStorage.getItem("woofs.token");
+const token = localStorage.getItem("woofs.token");
+const api = token
+  ? axios.create({
+      baseURL,
+      headers: { Authorization: `Bearer ${token}` },
+    })
+  : axios.create({
+      baseURL,
+    });
 
-  if (token) {
-    api.defaults.headers.common["Authorization"] = `Bearer ${token}`;
-  }
+api.interceptors.request.use(
+  async (config) => {
+    const token = localStorage.getItem("woofs.token");
 
-  return config;
-});
+    if (token)
+      config.headers = {
+        Authorization: `Bearer ${token}`,
+      };
+
+    return config;
+  },
+  (error) => {
+    Promise.reject(error);
+  },
+);
+
+export { api };

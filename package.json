@@ -14,10 +14,12 @@
     "@radix-ui/react-radio-group": "^1.0.0",
     "@radix-ui/react-slider": "^1.0.0",
     "@radix-ui/react-toggle-group": "^1.0.0",
+    "@react-spring/web": "^9.5.5",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "react-icons": "^4.4.0",
     "react-router-dom": "^6.3.0",
+    "react-tinder-card": "^1.6.2",
     "styled-components": "^5.3.5",
     "swiper": "^8.3.2",
     "vite-plugin-pwa": "^0.12.3"

@@ -1,33 +1,17 @@
 import { GreenTitle } from "../../components/GreenTitle";
-import { MatchButton } from "../../components/MatchButton";
-import { BsReplyFill } from "react-icons/bs";
 import { MatchCarousel } from "./components/MatchCarousel";
 
-import {
-  SearchMatchContainer,
-  ContainerText,
-  ContainerButtonMatch,
-  ContainerReply,
-} from "./styles";
+import { SearchMatchContainer, ContainerText } from "./styles";
 
 export function SearchMatch() {
   return (
     <>
       <SearchMatchContainer>
         <ContainerText>
-          <GreenTitle>Woofs Match</GreenTitle>
+          <GreenTitle>Achar par perfeito</GreenTitle>
         </ContainerText>
 
         <MatchCarousel />
-
-        <ContainerButtonMatch>
-          <MatchButton buttonType="deslike" />
-          <ContainerReply>
-            <BsReplyFill />
-            <BsReplyFill />
-          </ContainerReply>
-          <MatchButton buttonType="like" />
-        </ContainerButtonMatch>
       </SearchMatchContainer>
     </>
   );

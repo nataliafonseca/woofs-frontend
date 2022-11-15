@@ -12,6 +12,8 @@ export function MatchButton({ buttonType, ...rest }: ButtonMatchs) {
   const like = buttonType === "like";
 
   return (
-    <Container {...rest}>{like ? <img src={buttonLike} /> : <img src={buttonDeslike} />}</Container>
+    <Container {...rest}>
+      {like ? <img src={buttonLike} alt="" /> : <img src={buttonDeslike} alt="" />}
+    </Container>
   );
 }

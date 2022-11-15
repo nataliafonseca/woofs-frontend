@@ -2,13 +2,12 @@ import { FaUserAlt } from "react-icons/fa";
 import { Link } from "react-router-dom";
 import loginImage from "../../assets/loginImage.png";
 import { DefaultButton } from "../../components/DefaultButton";
+import { useAuth } from "../../contexts/AuthContext";
 import { Input } from "../../components/form/Input";
 import { Header } from "../../components/Header";
 import { useFormik } from "formik";
 import * as yup from "yup";
 
-import { useContext } from "react";
-import { AuthContext } from "../../contexts/AuthContext";
 import {
   Container,
   ImageStyled,
@@ -18,18 +17,18 @@ import {
   SectionTitle,
 } from "./styles";
 
+const initialValues = {
+  email: "",
+  password: "",
+};
+
+const validationSchema = yup.object({
+  email: yup.string().email("Insira um email válido").required("Campo obrigatório").max(100),
+  password: yup.string().required("Campo obrigatório"),
+});
+
 export function Login() {
-  const { signIn } = useContext(AuthContext);
-
-  const initialValues = {
-    email: "",
-    password: "",
-  };
-
-  const validationSchema = yup.object({
-    email: yup.string().email("Insira um email válido").required("Campo obrigatório").max(100),
-    password: yup.string().required("Campo obrigatório"),
-  });
+  const { signIn } = useAuth();
 
   const formik = useFormik({
     initialValues,

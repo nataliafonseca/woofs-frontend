@@ -1,4 +1,4 @@
-import { ReactNode, createContext, useMemo, useState } from "react";
+import { ReactNode, createContext, useState, useContext } from "react";
 import { useNavigate } from "react-router-dom";
 import { toast } from "react-toastify";
 
@@ -21,7 +21,7 @@ interface AuthProviderProps {
 
 const AuthContext = createContext<AuthContextData>({} as AuthContextData);
 
-function AuthProvider({ children }: AuthProviderProps) {
+export function AuthProvider({ children }: AuthProviderProps) {
   const navigate = useNavigate();
   const token = localStorage.getItem("woofs.token");
   const [isAuthenticated, setIsAuthenticated] = useState(!!token);
@@ -55,4 +55,12 @@ function AuthProvider({ children }: AuthProviderProps) {
   return <AuthContext.Provider value={authContext}>{children}</AuthContext.Provider>;
 }
 
-export { AuthContext, AuthProvider };
+export function useAuth() {
+  const context = useContext(AuthContext);
+
+  if (!context) {
+    throw new Error("useAuth must be used within an AuthProvider");
+  }
+
+  return context;
+}

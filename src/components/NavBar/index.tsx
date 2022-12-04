@@ -10,7 +10,7 @@ import chatEnabled from "../../assets/chatEnabled.svg";
 import woofs from "../../assets/woofs.svg";
 import woofsEnabled from "../../assets/woofsEnabled.svg";
 
-import { NavBarContainer } from "./styles";
+import { NavBarContainer, NavBarContent } from "./styles";
 
 const icons = {
   deck: {
@@ -48,15 +48,17 @@ export function NavBar() {
 
   return (
     <NavBarContainer>
-      {Object.entries(icons).map(([key, value]) => (
-        <Link key={key} to={value.route}>
-          <Icon
-            active={pathname === value.route}
-            enabledSrc={value.enabledSrc}
-            disabledSrc={value.disabledSrc}
-          />
-        </Link>
-      ))}
+      <NavBarContent>
+        {Object.entries(icons).map(([key, value]) => (
+          <Link key={key} to={value.route}>
+            <Icon
+              active={pathname === value.route}
+              enabledSrc={value.enabledSrc}
+              disabledSrc={value.disabledSrc}
+            />
+          </Link>
+        ))}
+      </NavBarContent>
     </NavBarContainer>
   );
 }

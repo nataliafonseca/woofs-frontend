@@ -12,9 +12,8 @@ export const ContainerText = styled.div`
 
 export const MatchesWrapper = styled.div`
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-wrap: wrap;
-  gap: 1rem;
+  max-width: 316px;
+  margin: 0 auto;
   margin-top: 2rem;
 `;

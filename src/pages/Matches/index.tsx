@@ -17,7 +17,6 @@ export function Matches() {
         <MatchCard />
         <MatchCard />
         <MatchCard />
-        <MatchCard />
       </MatchesWrapper>
 
       <NavBar />

@@ -1,7 +1,13 @@
 import styled from "styled-components";
 
 export const MatchCardContainer = styled.div`
-  width: 150px;
+  max-width: 150px;
+
+  width: calc(50% - 1rem);
+  margin-right: 0.5rem;
+  margin-left: 0.5rem;
+  margin-bottom: 1rem;
+
   height: 200px;
   border-radius: 6px;
   background-image: url("./flor.png");
@@ -10,6 +16,12 @@ export const MatchCardContainer = styled.div`
   background-size: cover;
   overflow: hidden;
   position: relative;
+
+  @media (max-width: 330px) {
+    width: 100%;
+    margin: 0 auto;
+    margin-bottom: 1rem;
+  }
 `;
 
 export const PetInfosWrapper = styled.div`

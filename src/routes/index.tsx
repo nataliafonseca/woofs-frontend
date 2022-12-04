@@ -1,7 +1,7 @@
 import { Navigate, Outlet, Route, Routes as Switch } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
-import { NotFound } from "../pages/404";
 
+import { NotFound } from "../pages/404";
 import { Login } from "../pages/Login";
 import { Main } from "../pages/Main";
 import { Matches } from "../pages/Matches";

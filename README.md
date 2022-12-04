@@ -19,7 +19,7 @@
     <li>Para iniciar, rode o comando: yarn start</li>
 </ul>
 
-### Protótipo e Design do projeto:
+### Protótipo e Design do projeto: 
 
 <ul>
     <li>Protótipo => <a href='https://www.figma.com/proto/L335lZP9GRGvjSrGeXSfbP/Untitled?node-id=124%3A1288&scaling=min-zoom&page-id=38%3A2225&starting-point-node-id=124%3A1288'>

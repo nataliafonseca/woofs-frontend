@@ -26,7 +26,7 @@ const icons = {
   chat: {
     enabledSrc: chatEnabled,
     disabledSrc: chat,
-    route: "/chat",
+    route: "/chatlist",
   },
   woofs: {
     enabledSrc: woofsEnabled,

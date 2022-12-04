@@ -6,16 +6,14 @@ import { SearchMatchContainer, ContainerText } from "./styles";
 
 export function SearchMatch() {
   return (
-    <>
-      <SearchMatchContainer>
-        <ContainerText>
-          <GreenTitle>Achar par perfeito</GreenTitle>
-        </ContainerText>
+    <SearchMatchContainer>
+      <ContainerText>
+        <GreenTitle>Achar par perfeito</GreenTitle>
+      </ContainerText>
 
-        <MatchCarousel />
+      <MatchCarousel />
 
-        <NavBar />
-      </SearchMatchContainer>
-    </>
+      <NavBar />
+    </SearchMatchContainer>
   );
 }

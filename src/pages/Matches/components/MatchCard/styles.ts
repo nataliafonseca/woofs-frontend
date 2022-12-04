@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const MatchCardContainer = styled.div`
+export const MatchCardContainer = styled.div<{ image: string }>`
   max-width: 150px;
 
   width: calc(50% - 1rem);
@@ -10,7 +10,7 @@ export const MatchCardContainer = styled.div`
 
   height: 200px;
   border-radius: 6px;
-  background-image: url("./flor.png");
+  background-image: ${(props) => `url(${props.image})`};
   background-position: center;
   background-repeat: no-repeat;
   background-size: cover;

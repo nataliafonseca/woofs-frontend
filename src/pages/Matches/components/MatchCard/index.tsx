@@ -3,23 +3,30 @@ import likeSmall from '../../../../assets/like-small.svg'
 import closeSmall from '../../../../assets/close-small.svg'
 
 import { MatchCardContainer, PetInfosWrapper, Features, Controls, Divisor } from "./styles";
+import { IMatch } from '../../../../services/matchService';
 
-export function MatchCard() {
+interface MatchCardProps {
+  pet: IMatch
+  onDelete: (id: number) => void;
+  onLike: (id: number) => void;
+}
+
+export function MatchCard({ pet, onDelete, onLike }: MatchCardProps) {
   return (
-    <MatchCardContainer>
+    <MatchCardContainer image={pet.url}>
       <PetInfosWrapper>
         <Features>
-          Flor,<span>35 meses</span>
+          {pet.name.split(" ")[0]}, <span>{pet.age} meses</span>
         </Features>
 
         <Controls>
-          <button>
+          <button onClick={() => onDelete(pet.id)}>
             <img src={closeSmall} height={16} />
           </button>
 
           <Divisor />
 
-          <button>
+          <button onClick={() => onLike(pet.id)}>
             <img src={likeSmall} height={20} />
           </button>
         </Controls>

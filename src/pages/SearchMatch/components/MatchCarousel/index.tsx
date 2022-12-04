@@ -1,4 +1,4 @@
-import { createRef, useMemo, useState } from "react";
+import { createRef, useEffect, useMemo, useState } from "react";
 import TinderCard from "react-tinder-card";
 import { MatchButton } from "../../../../components/MatchButton";
 import { FcCheckmark } from "react-icons/fc";
@@ -16,53 +16,13 @@ import {
   CarouselContainer,
   Distance,
 } from "./styles";
-
-const db = [
-  {
-    id: 1,
-    name: "Richard Hendricks",
-    url: "./dog.png",
-    age: 35,
-    race: "Bichon frisé",
-    distance: 2,
-  },
-  {
-    id: 2,
-    name: "Erlich Bachman",
-    url: "./dog.png",
-    age: 15,
-    race: "Bichon frisé",
-    distance: 10,
-  },
-  {
-    id: 3,
-    name: "Monica Hall",
-    url: "./dog.png",
-    age: 5,
-    race: "Bichon frisé",
-    distance: 5,
-  },
-  {
-    id: 4,
-    name: "Jared Dunn",
-    url: "./dog.png",
-    age: 7,
-    race: "Bichon frisé",
-    distance: 15,
-  },
-  {
-    id: 5,
-    name: "Dinesh Chugtai",
-    url: "./dog.png",
-    age: 35,
-    race: "Bichon frisé",
-    distance: 8,
-  },
-];
+import { getPetsList, IMatch } from "../../../../services/matchService";
 
 enum DIRECTION_TYPES {
   right = "right",
   left = "left",
+  up = "up",
+  down = "down",
 }
 
 const swipeActions = {
@@ -72,19 +32,29 @@ const swipeActions = {
   [DIRECTION_TYPES.right]: () => {
     console.log("right");
   },
+  [DIRECTION_TYPES.up]: () => {
+    console.log("up");
+  },
+  [DIRECTION_TYPES.down]: () => {
+    console.log("down");
+  },
 };
 
 type directionType = keyof typeof DIRECTION_TYPES;
 
 export function MatchCarousel() {
-  const [usersState, setUsersState] = useState(db);
-  const childRefs = useMemo(
+  const [usersState, setUsersState] = useState([] as IMatch[]);
+  const childRefs: any = useMemo(
     () =>
-      Array(db.length)
+      Array(usersState.length)
         .fill(0)
-        .map((_) => createRef()),
-    [],
+        .map(() => createRef()),
+    [usersState.length],
   );
+
+  useEffect(() => {
+    getPetsList().then((response) => setUsersState(response));
+  }, []);
 
   const currentIndex = usersState.length - 1;
   const nextIndex = usersState.length - 2;

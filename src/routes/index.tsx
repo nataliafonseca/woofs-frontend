@@ -1,7 +1,8 @@
 import { Navigate, Outlet, Route, Routes as Switch } from "react-router-dom";
 import { useAuth } from "../contexts/AuthContext";
-
 import { NotFound } from "../pages/404";
+import { ChatList } from "../pages/ChatList";
+
 import { Login } from "../pages/Login";
 import { Main } from "../pages/Main";
 import { Matches } from "../pages/Matches";
@@ -35,12 +36,13 @@ export const Routes = () => (
       <Route path="/" element={<Main />} />
       <Route path="/login" element={<Login />} />
       <Route path="/registeraccount" element={<RegisterAccount />} />
-
-      <Route path="/registerpet" element={<RegisterPet />} />
-
-      <Route path="/searchmatch" element={<SearchMatch />} />
-      <Route path="/matches" element={<Matches />} />
     </Route>
+
+    <Route path="/registerpet" element={<RegisterPet />} />
+
+    <Route path="/searchmatch" element={<SearchMatch />} />
+    <Route path="/matches" element={<Matches />} />
+    <Route path="/chatlist" element={<ChatList />} />
 
     <Route element={<PrivateRoute />}></Route>
 

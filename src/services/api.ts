@@ -1,6 +1,7 @@
 import axios from "axios";
 
 const baseURL = import.meta.env.VITE_API_URL;
+const jsonServerURL = import.meta.env.VITE_JSON_API_URL;
 
 const token = localStorage.getItem("woofs.token");
 const api = token
@@ -28,4 +29,8 @@ api.interceptors.request.use(
   },
 );
 
-export { api };
+const jsonServer = axios.create({
+  baseURL: jsonServerURL,
+});
+
+export { api, jsonServer };

@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.form`
   margin: 20px;
 `;
 
@@ -17,15 +17,18 @@ export const SectionTitle = styled.h2`
 
 export const InputsWrapper = styled.div`
   display: flex;
-  align-items: center;
+  /* align-items: center; */
   justify-content: center;
   flex-direction: column;
   margin: 1.3rem 0;
 
-  div {
-    & + div {
-      margin-top: 1.3rem;
-    }
+  div + div,
+  p + div {
+    margin-top: 1.3rem;
+  }
+
+  div + p {
+    margin-top: 0.2rem;
   }
 `;
 

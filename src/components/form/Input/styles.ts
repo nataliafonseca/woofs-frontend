@@ -46,3 +46,9 @@ export const Label = styled.span<{ isEmpty: boolean }>`
       font-size: 12px;
     `}
 `;
+
+export const ErrorHint = styled.p`
+  color: ${(props) => props.theme.red500};
+  font-size: 0.875rem;
+  padding-left: 1rem;
+`;

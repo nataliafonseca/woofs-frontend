@@ -1,15 +1,17 @@
 import { InputHTMLAttributes, ReactNode, useRef, useState } from "react";
 import { FaEye, FaEyeSlash } from "react-icons/fa";
 
-import { InputStyled, InputWrapper, Label } from "./styles";
+import { InputStyled, InputWrapper, Label, ErrorHint } from "./styles";
 
 interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   label: string;
   type?: string;
   icon?: ReactNode;
+  error?: boolean;
+  helperText?: string | false | undefined;
 }
 
-export function Input({ label, type, icon, ...rest }: InputProps) {
+export function Input({ label, type, icon, error, helperText, ...rest }: InputProps) {
   const [isFocused, setIsFocused] = useState(false);
   const [isEmpty, setIsEmpty] = useState(false);
   const [passwordInputType, setPasswordInputType] = useState(type);
@@ -44,26 +46,29 @@ export function Input({ label, type, icon, ...rest }: InputProps) {
   };
 
   return (
-    <InputWrapper isFocused={isFocused}>
-      <Label isEmpty={isEmpty} onClick={handleClickInLabel}>
-        {label}
-      </Label>
-      <InputStyled
-        ref={inputRef}
-        onFocus={handleFocusInput}
-        onBlur={handleBlurInput}
-        type={passwordInputType}
-        {...rest}
-      />
+    <>
+      <InputWrapper isFocused={isFocused}>
+        <Label isEmpty={isEmpty} onClick={handleClickInLabel}>
+          {label}
+        </Label>
+        <InputStyled
+          ref={inputRef}
+          onFocus={handleFocusInput}
+          onBlur={handleBlurInput}
+          type={passwordInputType}
+          {...rest}
+        />
 
-      {isPasswordInput &&
-        (passwordInputType === "password" ? (
-          <FaEyeSlash onClick={showPassword} />
-        ) : (
-          <FaEye onClick={hidePassword} />
-        ))}
+        {isPasswordInput &&
+          (passwordInputType === "password" ? (
+            <FaEyeSlash onClick={showPassword} />
+          ) : (
+            <FaEye onClick={hidePassword} />
+          ))}
 
-      {icon}
-    </InputWrapper>
+        {icon}
+      </InputWrapper>
+      {error && <ErrorHint>* {helperText}</ErrorHint>}
+    </>
   );
 }

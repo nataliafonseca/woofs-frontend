@@ -16,4 +16,9 @@ export const Container = styled.button`
     max-width: 47px;
     max-height: 40px;
   }
+
+  &:disabled {
+    filter: grayscale(1);
+    cursor: initial;
+  }
 `;

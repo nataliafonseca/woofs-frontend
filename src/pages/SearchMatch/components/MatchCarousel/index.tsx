@@ -1,23 +1,24 @@
 /* eslint-disable @typescript-eslint/no-empty-function */
-import { createRef, useEffect, useMemo, useState } from "react";
+import { createRef, useMemo, useState } from "react";
+import { BsReplyFill } from "react-icons/bs";
+import { FcCheckmark } from "react-icons/fc";
+import { RiMapPinLine } from "react-icons/ri";
 import TinderCard from "react-tinder-card";
 import { MatchButton } from "../../../../components/MatchButton";
-import { FcCheckmark } from "react-icons/fc";
-import { BsReplyFill } from "react-icons/bs";
-import { RiMapPinLine } from "react-icons/ri";
+import { NoMatches } from "../../../../components/NoMatches";
 
+import { IMatch, likeBack, removePet } from "../../../../services/matchService";
 import {
   Card,
   CardContainer,
-  Details,
-  Race,
-  Stamp,
+  CarouselContainer,
   ContainerButtonMatch,
   ContainerReply,
-  CarouselContainer,
+  Details,
   Distance,
+  Race,
+  Stamp,
 } from "./styles";
-import { getPetsList, IMatch, likeBack, removePet } from "../../../../services/matchService";
 
 enum DIRECTION_TYPES {
   right = "right",
@@ -42,8 +43,8 @@ const swipeActions = {
 
 type directionType = keyof typeof DIRECTION_TYPES;
 
-export function MatchCarousel() {
-  const [usersState, setUsersState] = useState([] as IMatch[]);
+export function MatchCarousel({ petsList }: { petsList: IMatch[] }) {
+  const [usersState, setUsersState] = useState(petsList);
   const childRefs: any = useMemo(
     () =>
       Array(usersState.length)
@@ -51,10 +52,6 @@ export function MatchCarousel() {
         .map(() => createRef()),
     [usersState.length],
   );
-
-  useEffect(() => {
-    getPetsList().then((response) => setUsersState(response.filter((pet) => !pet.match)));
-  }, []);
 
   const currentIndex = usersState.length - 1;
   const nextIndex = usersState.length - 2;
@@ -76,49 +73,59 @@ export function MatchCarousel() {
 
   return (
     <CarouselContainer>
-      <CardContainer>
-        {usersState.map((user, index) => (
-          <TinderCard
-            ref={childRefs[index]}
-            className="swipe"
-            key={user.id}
-            onSwipe={(dir) => swiped(dir)}
-          >
-            <Card
-              img={user.url}
-              isShowing={index === currentIndex}
-              nextToShow={index === nextIndex}
+      {usersState.length ? (
+        <CardContainer>
+          {usersState.map((user, index) => (
+            <TinderCard
+              ref={childRefs[index]}
+              className="swipe"
+              key={user.id}
+              onSwipe={(dir) => swiped(dir)}
             >
-              <img src={user.url} alt="" />
-              <Distance isShowing={index === currentIndex}>
-                <RiMapPinLine /> {user.distance} km
-              </Distance>
-              <Details isShowing={index === currentIndex}>
-                <div>
-                  <h6>{user.name.split(" ")[0]},</h6> <b>{user.age} meses</b>
-                  <Race>
-                    <span>{user.race}</span>
-                  </Race>
-                </div>
-                <Stamp>
-                  <FcCheckmark size={17} />
-                </Stamp>
-              </Details>
-            </Card>
-          </TinderCard>
-        ))}
-      </CardContainer>
-
-      {!!usersState.length && (
-        <ContainerButtonMatch>
-          <MatchButton onClick={() => swipe(DIRECTION_TYPES.left)} buttonType="dislike" />
-          <ContainerReply>
-            <BsReplyFill />
-            <BsReplyFill />
-          </ContainerReply>
-          <MatchButton onClick={() => swipe(DIRECTION_TYPES.right)} buttonType="like" />
-        </ContainerButtonMatch>
+              <Card
+                img={user.url}
+                isShowing={index === currentIndex}
+                nextToShow={index === nextIndex}
+              >
+                <img src={user.url} alt="" />
+                <Distance isShowing={index === currentIndex}>
+                  <RiMapPinLine /> {user.distance} km
+                </Distance>
+                <Details isShowing={index === currentIndex}>
+                  <div>
+                    <h6>{user.name.split(" ")[0]},</h6> <b>{user.age} meses</b>
+                    <Race>
+                      <span>{user.race}</span>
+                    </Race>
+                  </div>
+                  <Stamp>
+                    <FcCheckmark size={17} />
+                  </Stamp>
+                </Details>
+              </Card>
+            </TinderCard>
+          ))}
+        </CardContainer>
+      ) : (
+        <NoMatches />
       )}
+
+      <ContainerButtonMatch>
+        <MatchButton
+          onClick={() => swipe(DIRECTION_TYPES.left)}
+          buttonType="deslike"
+          disabled={!usersState.length}
+        />
+        <ContainerReply>
+          <BsReplyFill />
+          <BsReplyFill />
+        </ContainerReply>
+        <MatchButton
+          onClick={() => swipe(DIRECTION_TYPES.right)}
+          buttonType="like"
+          disabled={!usersState.length}
+        />
+      </ContainerButtonMatch>
     </CarouselContainer>
   );
 }

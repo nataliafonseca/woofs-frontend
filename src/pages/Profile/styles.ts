@@ -22,6 +22,30 @@ export const ContainerText = styled.div`
   display: flex;
   align-items: center;
   justify-content: center;
+  position: relative;
+
+  button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    position: absolute;
+    right: 0;
+    border: none;
+    background-color: ${(props) => props.theme.gray50};
+    color: ${(props) => props.theme.green500};
+    font-weight: bold;
+    line-height: 0;
+    width: 2.4rem;
+    height: 2.4rem;
+    border-radius: 50%;
+    border-radius: 100px;
+    transition: 0.2s;
+
+    &:hover {
+      background-color: ${(props) => props.theme.gray50};
+    }
+  }
 `;
 
 export const ProfilePicture = styled.img`

@@ -7,7 +7,7 @@
     "dev": "vite",
     "build": "tsc && vite build",
     "preview": "vite preview",
-    "serve:db": "json-server db.json",
+    "serve:db": "json-server --host 0.0.0.0 db.json",
     "lint": "eslint --fix 'src/**/*.{js,jsx,ts,tsx,json}'"
   },
   "dependencies": {

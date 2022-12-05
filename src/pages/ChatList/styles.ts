@@ -1,8 +1,8 @@
 import styled from "styled-components";
 
 export const Container = styled.div<{ noContent: boolean }>`
-  margin: 20px;
-  display: ${(props) => (props.noContent ? "grid" : "initial")};
+  margin: 20px 0;
+  display: ${(props) => (props.noContent ? "grid" : "block")};
   grid-template-rows: auto 1fr;
 `;
 
@@ -13,12 +13,12 @@ export const ContainerText = styled.div`
 `;
 
 export const Filter = styled.div`
+  margin-inline: 20px;
   display: grid;
   grid-template-columns: auto 1fr;
   align-items: center;
   gap: 0.5rem;
   margin-block: 2rem;
-  width: 100%;
   border-radius: 1000px;
   border: 1px solid ${(props) => props.theme.gray300};
   padding: 0.5rem;
@@ -34,13 +34,4 @@ export const Filter = styled.div`
   &:focus-within {
     border: 1px solid ${(props) => props.theme.green500};
   }
-`;
-
-export const MatchesWrapper = styled.div`
-  display: flex;
-  align-items: center;
-  justify-content: start;
-  flex-wrap: wrap;
-  gap: 1rem;
-  margin-top: 2rem;
 `;

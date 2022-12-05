@@ -101,16 +101,6 @@
       "match": false
     },
     {
-      "id": 11,
-      "name": "Blu",
-      "url": "dogs/SRD.png",
-      "age": 100,
-      "race": "SRD",
-      "distance": 8,
-      "like": true,
-      "match": false
-    },
-    {
       "id": 12,
       "name": "Drool Barrymore",
       "url": "dogs/yorkshire.png",

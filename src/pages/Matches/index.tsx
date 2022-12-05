@@ -42,7 +42,9 @@ export function Matches() {
           {list.length ? (
             <MatchesWrapper>
               {list.map((pet) => (
-                <MatchCard key={pet.id} pet={pet} onDelete={onDelete} onLike={onLike} />
+                <>
+                  <MatchCard key={pet.id} pet={pet} onDelete={onDelete} onLike={onLike} />
+                </>
               ))}
             </MatchesWrapper>
           ) : (

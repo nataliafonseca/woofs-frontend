@@ -33,7 +33,7 @@ export function Profile() {
   }, []);
 
   return (
-    <Container>
+    <Container noContent={loading}>
       <ContainerText>
         <button onClick={signOut}>
           <FiLogOut />

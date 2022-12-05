@@ -10,9 +10,11 @@ interface OptionProps {
 export function Option({ icon, label }: OptionProps) {
   return (
     <Wrapper>
-      <div>{icon}</div>
-      <p>{label}</p>
-      <IoIosArrowForward size={24} />
+      <div>
+        <div>{icon}</div>
+        <p>{label}</p>
+        <IoIosArrowForward size={24} />
+      </div>
     </Wrapper>
   );
 }

@@ -5,7 +5,7 @@ export const Wrapper = styled.div`
   align-items: center;
   grid-template-columns: auto 1fr;
   gap: 1rem;
-  padding-inline: 0.2rem;
+  padding-inline: 20px;
 
   cursor: pointer;
   user-select: none;

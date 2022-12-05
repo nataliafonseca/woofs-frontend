@@ -1,8 +1,9 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
-  margin: 20px;
-  display: flex;
+export const Container = styled.div<{ noContent: boolean }>`
+  margin: 20px 0;
+  display: ${(props) => (props.noContent ? "grid" : "flex")};
+  grid-template-rows: auto 1fr;
   flex-direction: column;
   align-items: center;
   gap: 0.5rem;

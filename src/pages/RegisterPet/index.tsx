@@ -74,8 +74,7 @@ export function RegisterPet() {
           id="gender"
           name="gender"
           value={formik.values.gender}
-          onChange={formik.handleChange}
-          onBlur={formik.handleBlur}
+          onValueChange={(value) => formik.setFieldValue("gender", value)}
         >
           <RadioButton title="Macho" value="MALE" />
           <RadioButton title="Fêmea" value="FEMALE" />

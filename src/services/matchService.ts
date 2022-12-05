@@ -25,7 +25,7 @@ export async function getLikes(): Promise<IMatch[]> {
 export async function getMatches(): Promise<IMatch[]> {
   const response = await jsonServer.get("/pets");
   return response.data
-    .filter((pet: IMatch) => pet.match)
+    .filter((pet: IMatch) => pet.like && pet.match)
     .sort((a: IMatch, b: IMatch) => (a.updated_at > b.updated_at ? 1 : -1));
 }
 

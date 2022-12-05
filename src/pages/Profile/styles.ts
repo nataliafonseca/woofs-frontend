@@ -31,7 +31,7 @@ export const ContainerText = styled.div`
     justify-content: center;
     gap: 0.5rem;
     position: absolute;
-    right: 0;
+    right: 20px;
     border: none;
     background-color: ${(props) => props.theme.white};
     box-shadow: 0px 1px 3px ${(props) => props.theme.boxShadow};

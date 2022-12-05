@@ -38,13 +38,12 @@ export const Routes = () => (
       <Route path="/registeraccount" element={<RegisterAccount />} />
     </Route>
 
-    <Route path="/registerpet" element={<RegisterPet />} />
-
-    <Route path="/searchmatch" element={<SearchMatch />} />
-    <Route path="/matches" element={<Matches />} />
-    <Route path="/chatlist" element={<ChatList />} />
-
-    <Route element={<PrivateRoute />}></Route>
+    <Route element={<PrivateRoute />}>
+      <Route path="/registerpet" element={<RegisterPet />} />
+      <Route path="/searchmatch" element={<SearchMatch />} />
+      <Route path="/matches" element={<Matches />} />
+      <Route path="/chatlist" element={<ChatList />} />
+    </Route>
 
     <Route path="*" element={<NotFound />} />
   </Switch>

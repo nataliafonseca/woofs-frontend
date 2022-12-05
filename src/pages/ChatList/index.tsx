@@ -21,7 +21,6 @@ export function ChatList() {
 
   useEffect(() => {
     getMatches().then((response) => {
-      console.log(response);
       setList(response);
       setLoading(false);
     });

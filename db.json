@@ -39,16 +39,6 @@
       "distance": 15,
       "like": true,
       "match": false
-    },
-    {
-      "id": 5,
-      "name": "Dinesh Chugtai",
-      "url": "./dog.png",
-      "age": 35,
-      "race": "Bichon frisé",
-      "distance": 8,
-      "like": true,
-      "match": false
     }
   ]
-}  
+}

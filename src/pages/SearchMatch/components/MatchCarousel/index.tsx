@@ -1,3 +1,4 @@
+/* eslint-disable @typescript-eslint/no-empty-function */
 import { createRef, useEffect, useMemo, useState } from "react";
 import TinderCard from "react-tinder-card";
 import { MatchButton } from "../../../../components/MatchButton";
@@ -16,7 +17,7 @@ import {
   CarouselContainer,
   Distance,
 } from "./styles";
-import { getPetsList, IMatch } from "../../../../services/matchService";
+import { getPetsList, IMatch, likeBack, removePet } from "../../../../services/matchService";
 
 enum DIRECTION_TYPES {
   right = "right",
@@ -25,19 +26,18 @@ enum DIRECTION_TYPES {
   down = "down",
 }
 
+const alreadySwiped: number[] = [];
 const swipeActions = {
-  [DIRECTION_TYPES.left]: () => {
-    console.log("left");
+  [DIRECTION_TYPES.left]: (id: number) => {
+    removePet(id);
+    alreadySwiped.push(id);
   },
-  [DIRECTION_TYPES.right]: () => {
-    console.log("right");
+  [DIRECTION_TYPES.right]: (id: number) => {
+    likeBack(id);
+    alreadySwiped.push(id);
   },
-  [DIRECTION_TYPES.up]: () => {
-    console.log("up");
-  },
-  [DIRECTION_TYPES.down]: () => {
-    console.log("down");
-  },
+  [DIRECTION_TYPES.up]: () => {},
+  [DIRECTION_TYPES.down]: () => {},
 };
 
 type directionType = keyof typeof DIRECTION_TYPES;
@@ -53,7 +53,7 @@ export function MatchCarousel() {
   );
 
   useEffect(() => {
-    getPetsList().then((response) => setUsersState(response));
+    getPetsList().then((response) => setUsersState(response.filter((pet) => !pet.match)));
   }, []);
 
   const currentIndex = usersState.length - 1;
@@ -62,10 +62,10 @@ export function MatchCarousel() {
 
   const swiped = (direction: directionType) => {
     const lastUserId = usersState[currentIndex].id;
-
     setUsersState((state) => state.filter((user) => user.id !== lastUserId));
-
-    swipeActions[direction]();
+    if (!alreadySwiped.includes(lastUserId)) {
+      swipeActions[direction](lastUserId);
+    }
   };
 
   const swipe = (dir: string) => {
@@ -109,14 +109,16 @@ export function MatchCarousel() {
         ))}
       </CardContainer>
 
-      <ContainerButtonMatch>
-        <MatchButton onClick={() => swipe(DIRECTION_TYPES.left)} buttonType="deslike" />
-        <ContainerReply>
-          <BsReplyFill />
-          <BsReplyFill />
-        </ContainerReply>
-        <MatchButton onClick={() => swipe(DIRECTION_TYPES.right)} buttonType="like" />
-      </ContainerButtonMatch>
+      {!!usersState.length && (
+        <ContainerButtonMatch>
+          <MatchButton onClick={() => swipe(DIRECTION_TYPES.left)} buttonType="dislike" />
+          <ContainerReply>
+            <BsReplyFill />
+            <BsReplyFill />
+          </ContainerReply>
+          <MatchButton onClick={() => swipe(DIRECTION_TYPES.right)} buttonType="like" />
+        </ContainerButtonMatch>
+      )}
     </CarouselContainer>
   );
 }

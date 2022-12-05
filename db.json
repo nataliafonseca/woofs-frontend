@@ -1,16 +1,6 @@
 {
   "pets": [
     {
-      "id": 1,
-      "name": "Richard Hendricks",
-      "url": "./dog.png",
-      "age": 35,
-      "race": "Bichon frisé",
-      "distance": 2,
-      "like": true,
-      "match": false
-    },
-    {
       "id": 2,
       "name": "Erlich Bachman",
       "url": "./dog.png",
@@ -28,17 +18,7 @@
       "race": "Bichon frisé",
       "distance": 5,
       "like": true,
-      "match": false
-    },
-    {
-      "id": 4,
-      "name": "Jared Dunn",
-      "url": "./dog.png",
-      "age": 7,
-      "race": "Bichon frisé",
-      "distance": 15,
-      "like": true,
-      "match": false
+      "match": true
     }
   ]
 }

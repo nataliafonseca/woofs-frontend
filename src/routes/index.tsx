@@ -6,6 +6,7 @@ import { ChatList } from "../pages/ChatList";
 import { Login } from "../pages/Login";
 import { Main } from "../pages/Main";
 import { Matches } from "../pages/Matches";
+import { Profile } from "../pages/Profile";
 import { RegisterAccount } from "../pages/RegisterAccount";
 import { RegisterPet } from "../pages/RegisterPet";
 import { SearchMatch } from "../pages/SearchMatch";
@@ -43,6 +44,7 @@ export const Routes = () => (
       <Route path="/searchmatch" element={<SearchMatch />} />
       <Route path="/matches" element={<Matches />} />
       <Route path="/chatlist" element={<ChatList />} />
+      <Route path="/profile" element={<Profile />} />
     </Route>
 
     <Route path="*" element={<NotFound />} />

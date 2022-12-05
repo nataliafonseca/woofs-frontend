@@ -6,6 +6,8 @@ import { RadioButton } from "../../components/form/RadioButton";
 import { InputFile } from "../../components/form/InputFile";
 import { DefaultButton } from "../../components/DefaultButton";
 import thumb from "../../assets/thumb.svg";
+import { useFormik } from "formik";
+import * as yup from "yup";
 
 import {
   Gender,
@@ -26,27 +28,99 @@ import {
   ImagesRow,
   ButtonWrapper,
 } from "./styles";
+import { registerPet } from "../../services/petService";
+import { useNavigate } from "react-router-dom";
+
+const initialValues = {
+  name: "",
+  about: "",
+  age: "",
+  breed: "",
+  gender: "MALE",
+};
+
+const validationSchema = yup.object({
+  name: yup.string().required("Campo obrigatório"),
+  age: yup.number().required("Campo obrigatório"),
+});
 
 export function RegisterPet() {
+  const navigate = useNavigate();
   const [distanceNumber, setDistanceNumber] = useState(10);
+
+  const formik = useFormik({
+    initialValues,
+    validationSchema,
+    onSubmit: async (values) => {
+      await registerPet({
+        name: values.name,
+        about: values.about,
+        age: Number(values.age),
+        breed: values.breed.length ? values.breed : "SRD",
+        gender: values.gender,
+      });
+
+      navigate("/searchmatch");
+    },
+  });
 
   return (
     <RegisterPetContainer>
       <Header linkTo="/registeraccount" title="Cadastrar Pet" />
 
-      <form>
+      <form onSubmit={formik.handleSubmit}>
         <SubTitle>Escolha o gênero</SubTitle>
-        <Gender>
-          <RadioButton title="Macho" value="Macho" />
-          <RadioButton title="Fêmea" value="Fêmea" />
+        <Gender
+          id="gender"
+          name="gender"
+          value={formik.values.gender}
+          onChange={formik.handleChange}
+          onBlur={formik.handleBlur}
+        >
+          <RadioButton title="Macho" value="MALE" />
+          <RadioButton title="Fêmea" value="FEMALE" />
         </Gender>
 
         <SubTitle>Informações do pet</SubTitle>
         <InputsWrapper>
-          <Input type="text" label="Nome" />
-          <Input type="text" label="Raça" />
-          <Input type="number" label="Idade em meses" />
-          <InputTextArea />
+          <Input
+            type="text"
+            id="name"
+            name="name"
+            value={formik.values.name}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            error={formik.touched.name && !!formik.errors.name}
+            helperText={formik.touched.name && formik.errors.name}
+            label="Nome"
+          />
+          <Input
+            id="age"
+            name="age"
+            value={formik.values.age}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            error={formik.touched.age && !!formik.errors.age}
+            helperText={formik.touched.age && formik.errors.age}
+            type="number"
+            label="Idade em meses"
+          />
+          <Input
+            id="breed"
+            name="breed"
+            value={formik.values.breed}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+            type="text"
+            label="Raça"
+          />
+          <InputTextArea
+            id="about"
+            name="about"
+            value={formik.values.about}
+            onChange={formik.handleChange}
+            onBlur={formik.handleBlur}
+          />
         </InputsWrapper>
 
         <SubTitle>Interesses</SubTitle>

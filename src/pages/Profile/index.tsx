@@ -50,7 +50,7 @@ export function Profile() {
           <div>
             <Option icon={<FiEdit />} label="Editar Perfil" />
             <Option icon={<FiCheckSquare />} label="Editar Interesses" />
-            <Option icon={<FiImage />} label="Modificar album de fotos" />
+            <Option icon={<FiImage />} label="Modificar album" />
           </div>
           <Album pictures={pet.pictures} />
         </>

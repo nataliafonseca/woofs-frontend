@@ -26,6 +26,7 @@ export const Wrapper = styled.div`
       color: ${(props) => props.theme.green500};
     }
   }
+
   &:hover,
   &:active {
     background-color: ${(props) => props.theme.gray100};

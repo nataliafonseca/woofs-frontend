@@ -3,6 +3,7 @@ import { BiSearchAlt } from "react-icons/bi";
 import { GreenTitle } from "../../components/GreenTitle";
 import { Loading } from "../../components/Loading";
 import { NavBar } from "../../components/NavBar";
+import { NoContent } from "../../components/NoMatches";
 import { getMatches, IMatch } from "../../services/matchService";
 import { defaultTheme } from "../../styles/themes/default";
 import { ListItem } from "./components/ListItem";
@@ -26,12 +27,18 @@ export function ChatList() {
   }, []);
 
   return (
-    <Container>
+    <Container noContent={loading || !list.length}>
       <ContainerText>
         <GreenTitle>Chat</GreenTitle>
       </ContainerText>
       {loading ? (
         <Loading />
+      ) : !list.length ? (
+        <NoContent
+          title={"Seu bichinho ainda não tem Matches"}
+          text={"Continue buscando e logo encontrará um par perfeito para ele."}
+          titleBellowImage={true}
+        />
       ) : (
         <>
           <Filter>
@@ -46,7 +53,6 @@ export function ChatList() {
               onChange={(e) => setFilter(e.target.value)}
             />
           </Filter>
-
           {list
             .filter((pet) => pet.name.toLowerCase().includes(filter.toLowerCase()))
             .map((pet, index) => (

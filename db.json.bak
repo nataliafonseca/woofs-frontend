@@ -3,29 +3,29 @@
     {
       "id": 1,
       "name": "Richard Hendricks",
-      "url": "./dog.png",
+      "url": "dogs/akita.png",
       "age": 35,
-      "race": "Bichon frisé",
+      "race": "Akita",
       "distance": 2,
-      "like": true,
+      "like": false,
       "match": false
     },
     {
       "id": 2,
       "name": "Erlich Bachman",
-      "url": "./dog.png",
+      "url": "dogs/beagle.png",
       "age": 15,
-      "race": "Bichon frisé",
+      "race": "Beagle",
       "distance": 10,
-      "like": true,
-      "match": true
+      "like": false,
+      "match": false
     },
     {
       "id": 3,
       "name": "Monica Hall",
-      "url": "./dog.png",
+      "url": "dogs/cocker.png",
       "age": 5,
-      "race": "Bichon frisé",
+      "race": "Cocker Spaniel",
       "distance": 5,
       "like": true,
       "match": false
@@ -33,22 +33,92 @@
     {
       "id": 4,
       "name": "Jared Dunn",
-      "url": "./dog.png",
+      "url": "dogs/corgi.png",
       "age": 7,
-      "race": "Bichon frisé",
+      "race": "Corgi",
       "distance": 15,
-      "like": true,
+      "like": false,
       "match": false
     },
     {
       "id": 5,
       "name": "Dinesh Chugtai",
-      "url": "./dog.png",
+      "url": "dogs/golden.png",
       "age": 35,
-      "race": "Bichon frisé",
+      "race": "Golden Retriever",
+      "distance": 8,
+      "like": false,
+      "match": false
+    },
+    {
+      "id": 6,
+      "name": "Jack",
+      "url": "dogs/jack-russell.png",
+      "age": 40,
+      "race": "Jack Russell Terrier",
       "distance": 8,
       "like": true,
       "match": false
+    },
+    {
+      "id": 7,
+      "name": "Ruby",
+      "url": "dogs/pomeranian.png",
+      "age": 5,
+      "race": "Pomeranian",
+      "distance": 3,
+      "like": false,
+      "match": false
+    },
+    {
+      "id": 8,
+      "name": "Brisket",
+      "url": "dogs/poodle.png",
+      "age": 10,
+      "race": "Poodle",
+      "distance": 8,
+      "like": true,
+      "match": true
+    },
+    {
+      "id": 9,
+      "name": "Bailey",
+      "url": "dogs/pug.png",
+      "age": 36,
+      "race": "Pug",
+      "distance": 8,
+      "like": true,
+      "match": true
+    },
+    {
+      "id": 10,
+      "name": "Murphy",
+      "url": "dogs/shih-tzu.png",
+      "age": 24,
+      "race": "Shih-Tzu",
+      "distance": 7,
+      "like": false,
+      "match": false
+    },
+    {
+      "id": 11,
+      "name": "Blu",
+      "url": "dogs/SRD.png",
+      "age": 100,
+      "race": "SRD",
+      "distance": 8,
+      "like": true,
+      "match": false
+    },
+    {
+      "id": 12,
+      "name": "Drool Barrymore",
+      "url": "dogs/yorkshire.png",
+      "age": 35,
+      "race": "Yorkshire Terrier",
+      "distance": 8,
+      "like": true,
+      "match": true
     }
   ]
-}  
+}

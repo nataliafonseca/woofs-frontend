@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
-export const Container = styled.div`
+export const Container = styled.div<{ noContent: boolean }>`
   margin: 20px;
+  display: ${(props) => (props.noContent ? "grid" : "initial")};
+  grid-template-rows: auto 1fr;
 `;
-
 export const ContainerText = styled.div`
   display: flex;
   align-items: center;

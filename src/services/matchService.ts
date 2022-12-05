@@ -23,7 +23,7 @@ export async function getLikes(): Promise<IMatch[]> {
 
 export async function getMatches(): Promise<IMatch[]> {
   const response = await jsonServer.get("/pets");
-  return response.data.filter((pet: IMatch) => pet.match);
+  return response.data.filter((pet: IMatch) => pet.like && pet.match);
 }
 
 export async function removePet(id: number) {

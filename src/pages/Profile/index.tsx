@@ -16,9 +16,18 @@ export function Profile() {
   const [pet, setPet] = useState({} as IPet);
 
   useEffect(() => {
+    const defaultPet: IPet = {
+      name: "Snow José",
+      about: "Um principe! Lindo, fofinho, companheiro e maravilhoso!",
+      age: 120,
+      breed: "Maltês",
+      gender: "MALE",
+      pictures: ["snow1.png", "snow2.png", "snow3.png", "snow4.png", "snow5.png", "snow6.png"],
+      tutorId: "",
+    };
+
     getPet().then((response) => {
-      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
-      setPet(response!);
+      setPet(response || defaultPet);
       setLoading(false);
     });
   }, []);
@@ -32,7 +41,7 @@ export function Profile() {
         <GreenTitle>Perfil</GreenTitle>
       </ContainerText>
 
-      {loading ? (
+      {loading || !pet ? (
         <Loading />
       ) : (
         <>

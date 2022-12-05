@@ -5,7 +5,7 @@ import { FcCheckmark } from "react-icons/fc";
 import { RiMapPinLine } from "react-icons/ri";
 import TinderCard from "react-tinder-card";
 import { MatchButton } from "../../../../components/MatchButton";
-import { NoMatches } from "../../../../components/NoMatches";
+import { NoContent } from "../../../../components/NoMatches";
 
 import { IMatch, likeBack, removePet } from "../../../../services/matchService";
 import {
@@ -81,6 +81,7 @@ export function MatchCarousel({ petsList }: { petsList: IMatch[] }) {
               className="swipe"
               key={user.id}
               onSwipe={(dir) => swiped(dir)}
+              preventSwipe={["up", "down"]}
             >
               <Card
                 img={user.url}
@@ -107,7 +108,10 @@ export function MatchCarousel({ petsList }: { petsList: IMatch[] }) {
           ))}
         </CardContainer>
       ) : (
-        <NoMatches />
+        <NoContent
+          title={"Por enquanto acabaram as indicações"}
+          text={"Mas não fique triste, daqui a pouco teremos mais pares para o seu bichinho."}
+        />
       )}
 
       <ContainerButtonMatch>

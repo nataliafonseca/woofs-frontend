@@ -2,7 +2,7 @@ import { useEffect, useState } from "react";
 import { GreenTitle } from "../../components/GreenTitle";
 import { Loading } from "../../components/Loading";
 import { NavBar } from "../../components/NavBar";
-import { NoMatches } from "../../components/NoMatches";
+import { NoContent } from "../../components/NoMatches";
 import { getLikes, IMatch, likeBack, removePet } from "../../services/matchService";
 import { MatchCard } from "./components/MatchCard";
 
@@ -30,7 +30,7 @@ export function Matches() {
   };
 
   return (
-    <Container>
+    <Container noContent={loading || !list.length}>
       <ContainerText>
         <GreenTitle>Matches</GreenTitle>
       </ContainerText>
@@ -46,7 +46,11 @@ export function Matches() {
               ))}
             </MatchesWrapper>
           ) : (
-            <NoMatches />
+            <NoContent
+              title={"Seu bichinho ainda não tem Matches"}
+              text={"Continue buscando e logo encontrará um par perfeito para ele."}
+              titleBellowImage={true}
+            />
           )}
         </>
       )}

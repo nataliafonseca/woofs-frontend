@@ -32,7 +32,8 @@ export const ContainerText = styled.div`
     position: absolute;
     right: 0;
     border: none;
-    background-color: ${(props) => props.theme.gray50};
+    background-color: ${(props) => props.theme.white};
+    box-shadow: 0px 1px 3px ${(props) => props.theme.boxShadow};
     color: ${(props) => props.theme.green500};
     font-weight: bold;
     line-height: 0;
@@ -42,7 +43,8 @@ export const ContainerText = styled.div`
     border-radius: 100px;
     transition: 0.2s;
 
-    &:hover {
+    &:hover,
+    &:active {
       background-color: ${(props) => props.theme.gray50};
     }
   }

@@ -9,8 +9,6 @@ export const Wrapper = styled.div`
     padding: 1rem;
     margin: 0 20px;
     gap: 1rem;
-    cursor: pointer;
-    user-select: none;
 
     > div {
       background-color: ${(props) => props.theme.gray50};
@@ -26,6 +24,9 @@ export const Wrapper = styled.div`
       color: ${(props) => props.theme.green500};
     }
   }
+
+  cursor: pointer;
+  user-select: none;
 
   &:hover,
   &:active {

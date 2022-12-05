@@ -9,6 +9,7 @@ export interface IMatch {
   distance: 2;
   like: false;
   match: false;
+  updated_at: number;
 }
 
 export async function getPetsList(): Promise<IMatch[]> {
@@ -23,7 +24,9 @@ export async function getLikes(): Promise<IMatch[]> {
 
 export async function getMatches(): Promise<IMatch[]> {
   const response = await jsonServer.get("/pets");
-  return response.data.filter((pet: IMatch) => pet.like && pet.match);
+  return response.data
+    .filter((pet: IMatch) => pet.match)
+    .sort((a: IMatch, b: IMatch) => (a.updated_at > b.updated_at ? 1 : -1));
 }
 
 export async function removePet(id: number) {
@@ -33,5 +36,6 @@ export async function removePet(id: number) {
 export async function likeBack(id: number) {
   await jsonServer.patch(`/pets/${id}`, {
     match: true,
+    updated_at: new Date().getTime(),
   });
 }

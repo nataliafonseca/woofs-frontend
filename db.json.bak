@@ -8,7 +8,8 @@
       "race": "Akita",
       "distance": 2,
       "like": false,
-      "match": false
+      "match": false,
+      "updated_at": 0
     },
     {
       "id": 2,
@@ -18,7 +19,8 @@
       "race": "Beagle",
       "distance": 10,
       "like": false,
-      "match": false
+      "match": false,
+      "updated_at": 0
     },
     {
       "id": 3,
@@ -28,7 +30,8 @@
       "race": "Cocker Spaniel",
       "distance": 5,
       "like": true,
-      "match": false
+      "match": false,
+      "updated_at": 0
     },
     {
       "id": 4,
@@ -38,7 +41,8 @@
       "race": "Corgi",
       "distance": 15,
       "like": false,
-      "match": false
+      "match": false,
+      "updated_at": 0
     },
     {
       "id": 5,
@@ -48,7 +52,8 @@
       "race": "Golden Retriever",
       "distance": 8,
       "like": false,
-      "match": false
+      "match": false,
+      "updated_at": 0
     },
     {
       "id": 6,
@@ -58,7 +63,8 @@
       "race": "Jack Russell Terrier",
       "distance": 8,
       "like": true,
-      "match": false
+      "match": false,
+      "updated_at": 0
     },
     {
       "id": 7,
@@ -68,7 +74,8 @@
       "race": "Pomeranian",
       "distance": 3,
       "like": false,
-      "match": false
+      "match": false,
+      "updated_at": 0
     },
     {
       "id": 8,
@@ -78,7 +85,8 @@
       "race": "Poodle",
       "distance": 8,
       "like": true,
-      "match": true
+      "match": true,
+      "updated_at": 0
     },
     {
       "id": 9,
@@ -88,7 +96,8 @@
       "race": "Pug",
       "distance": 8,
       "like": true,
-      "match": true
+      "match": true,
+      "updated_at": 0
     },
     {
       "id": 10,
@@ -97,8 +106,9 @@
       "age": 24,
       "race": "Shih-Tzu",
       "distance": 7,
-      "like": false,
-      "match": false
+      "like": true,
+      "match": false,
+      "updated_at": 0
     },
     {
       "id": 11,
@@ -108,7 +118,8 @@
       "race": "SRD",
       "distance": 8,
       "like": true,
-      "match": false
+      "match": false,
+      "updated_at": 0
     },
     {
       "id": 12,
@@ -118,7 +129,8 @@
       "race": "Yorkshire Terrier",
       "distance": 8,
       "like": true,
-      "match": true
+      "match": true,
+      "updated_at": 0
     }
   ]
 }

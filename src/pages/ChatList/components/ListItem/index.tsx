@@ -14,7 +14,7 @@ interface ListItemProps {
 
 export function ListItem({ pet, messageInfo }: ListItemProps) {
   return (
-    <Wrapper>
+    <Wrapper empty={!messageInfo.time}>
       <img src={pet.url} alt="" />
       <div>
         <div className="message">
@@ -30,10 +30,12 @@ export function ListItem({ pet, messageInfo }: ListItemProps) {
             </p>
           )}
         </div>
-        <div className="info">
-          <span>{messageInfo.time}</span>
-          {messageInfo.counter !== 0 && <span className="counter">{messageInfo.counter}</span>}
-        </div>
+        {messageInfo.time && (
+          <div className="info">
+            <span>{messageInfo.time}</span>
+            {messageInfo.counter !== 0 && <span className="counter">{messageInfo.counter}</span>}
+          </div>
+        )}
       </div>
     </Wrapper>
   );

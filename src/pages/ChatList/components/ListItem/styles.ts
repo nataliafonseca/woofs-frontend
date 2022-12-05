@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const Wrapper = styled.div`
+export const Wrapper = styled.div<{ empty: boolean }>`
   display: grid;
   align-items: center;
   grid-template-columns: auto 1fr;
@@ -31,7 +31,8 @@ export const Wrapper = styled.div`
         margin-bottom: 0.2rem;
       }
 
-      max-width: calc(100vw - 150px - 1.5rem);
+      max-width: ${(props) =>
+        props.empty ? "calc(100vw - 150px)" : "calc(100vw - 150px - 1.5rem)"};
 
       p {
         white-space: nowrap;

@@ -21,6 +21,7 @@ export function ChatList() {
 
   useEffect(() => {
     getMatches().then((response) => {
+      console.log(response);
       setList(response);
       setLoading(false);
     });
@@ -60,7 +61,7 @@ export function ChatList() {
                 key={pet.id}
                 messageInfo={
                   messageInfoMock[index] || {
-                    time: "03 nov",
+                    time: "",
                     counter: 0,
                     message: "",
                     yours: false,
